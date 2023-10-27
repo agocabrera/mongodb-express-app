@@ -4,9 +4,7 @@ const { MongoClient, ObjectId } = require("mongodb");
 require("dotenv").config();
 
 const app = express();
-const dbUri = process.env.db_uri;
-const serverPort = process.env.server_port;
-const dbClient = new MongoClient(dbUri);
+const dbClient = new MongoClient(process.env.DB_URI);
 
 const clients = dbClient.db("Database-0").collection("Clients");
 
@@ -87,8 +85,8 @@ dbClient
   .then(() => {
     console.log("Connected to database.");
 
-    app.listen(serverPort, () => {
-      console.log(`Server running on port ${serverPort}.`);
+    app.listen(process.env.SERVER_PORT, () => {
+      console.log(`Server running on port ${process.env.SERVER_PORT}.`);
     });
   })
   .catch((error) => {
