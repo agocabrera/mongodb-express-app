@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const jsonData = JSON.stringify(Object.fromEntries(formData));
 
     try {
-      fetch("http://localhost:3000/api/clients/", {
+      fetch("https://mongodb-express-app.onrender.com/api/clients/", {
         method: "POST",
         body: jsonData,
         headers: {

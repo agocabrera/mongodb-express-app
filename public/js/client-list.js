@@ -1,8 +1,11 @@
 async function deleteClient(id) {
   try {
-    const response = await fetch("http://localhost:3000/api/clients/" + id, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      "https://mongodb-express-app.onrender.com/api/clients/" + id,
+      {
+        method: "DELETE",
+      }
+    );
     if (response.ok) {
       console.log(`Deleted client with ID ${id}`);
     }
@@ -15,7 +18,9 @@ async function deleteClient(id) {
 
 async function fetchClients() {
   try {
-    const response = await fetch("http://localhost:3000/api/clients/");
+    const response = await fetch(
+      "https://mongodb-express-app.onrender.com/api/clients/"
+    );
     if (response.ok) {
       const data = await response.json();
       displayClients(data);
