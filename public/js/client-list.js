@@ -19,7 +19,7 @@ async function deleteClient(id) {
 async function fetchClients() {
   try {
     const response = await fetch(
-      "https://mongodb-express-app.onrender.com/api/clients/"
+      "https://mongodb-express-app.onrender.com/api/clients"
     );
     if (response.ok) {
       const data = await response.json();
