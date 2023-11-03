@@ -57,7 +57,7 @@ app.get("/api/clients/:id", async (request, response, next) => {
   }
 });
 
-app.post("/api/clients", async (request, response) => {
+app.post("/api/clients", async (request, response, next) => {
   const { firstName, lastName, email } = request.body;
 
   if (!firstName) {
